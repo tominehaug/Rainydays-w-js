@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Shopping Cart | Rainydays</title>
+    <title>Shipping details | Rainydays</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shopping cart items.">
+    <meta name="description" content="Shipping details.">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-512x512.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-192x192.png">
@@ -13,7 +13,7 @@
 <!--icon for hamburger menu-->
     <script src="https://kit.fontawesome.com/4b71fec88a.js" crossorigin="anonymous"></script>
 <!--stylesheet-->
-    <link href="../../css/basket.css" rel="stylesheet">
+    <link href="../../css/checkout-details.css" rel="stylesheet">
 <!--font sources-->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat+Subrayada:wght@400;700&family=Open+Sans:wght@300;400&display=swap');
@@ -35,26 +35,50 @@
         </nav>
     </header>
 <main>
-    <h1>Shopping cart: items</h1>
-    <section>
-        <img src="../images/RainyDays_Jacket2.jpg" alt="Scott Light Resistance 75. Grey, shaped and thin material.">
-        <h2>SCOTT Light Resistance 75</h2>
-        <div class="info">
+<h1>Shipping details</h1>
+<div class="gridparent">
+    <form>
+        <div class="details">
+        <fieldset>
+            <legend>Your details</legend>
+            <label for="name">Your name</label>
+            <input type="text" name="name" id="name" class="form__input" required>
+            <label for="phone">Your phone number</label>
+            <input type="tel" name="phone" id="phone" class="form__input" required>
+            <label for="email">Your email address</label>
+            <input type="email" name="email" id="email" class="form__input" required>
+        </fieldset>
+        </div>
+        <div class="address">
+        <fieldset>
+            <legend>Your address</legend>
+            <label for="streetname">Street name</label>
+            <input type="text" name="streetname" id="streetname" class="form__input" required>
+            <label for="streetnumber">Street number</label>
+            <input type="number" name="streetnumber" id="streetnumber" class="form__input" required>
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" class="form__input" required>
+            <label for="zipcode">Zip-code</label>
+            <input type="number" name="zipcode" id="zipcode" class="form__input" required>
+        </fieldset>
+        </div>
+    </form>
+    <aside>
+        <h2>Order summary</h2>
+        <img src="../images/RainyDays_Jacket2.jpg" alt="Image of SCOTT Light Resistance 75.">
+        <p class="product">SCOTT Light Resistance 75</p>
         <p>Size: S</p>
         <p>Quantity: 1</p>
         <p>Price: $85</p>
-        </div>
-    </section>
-    <p class="subtotal">Subtotal: $85</p>
-    <aside>
+        <p class="subtotal">Subtotal: $85</p>
+    </aside>
     <div class="buttons">
-        <a href="../../store/index.html">Shop more</a>
-    <div class="continue">
-        <a href="details-payment.html">Continue</a>
+    <a href="../checkout/index.html" class="back">Back</a>
+    <a href="confirmation/index.html">Place order</a>
     </div>
-    </div>
-</aside>
+</div>
 </main>
+</body>
 <footer>
     <ul>
         <li><i class="fa-brands fa-facebook" style="color: #d36245;"></i></li>
@@ -62,6 +86,4 @@
         <li><i class="fa-brands fa-youtube" style="color: #d36245;"></i></li>
     </ul>
 </footer>
-</body>
 </html>
-

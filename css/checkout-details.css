@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HEADER DESIGN START*/
+
+nav, #hamburger-menu {
+    display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+    display: block;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    background-color: #0A3641;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.logo{
+    max-width: 320px;
+    min-width: 300px;
+    padding: 30px;
+}
+
+.cart{
+    max-width: 70px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+nav{
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: none;
+    padding: 20px 0;
+    z-index: 1;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav li{
+    padding: 30px 50px;
+    
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 2em;
+    color: #D36245;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+nav a:hover{
+    font-weight: 700;
+}
+
+/*HEADER DESIGN END*/
+
+main{
+    margin-bottom: 100px;
+    margin-left: 60px;
+}
+
+.progress{
+    margin: 50px;
+}
+
+.gridparent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr, auto;
+    gap: 10px;
+}
+
+aside{
+    grid-row: span 2/span 2;
+    grid-row-start: 1;
+    grid-column-start: 3;
+    padding: 4em;
+    background-color: #EFEFEF;
+    max-width: fit-content;
+}
+
+aside img{
+    max-width: 200px;
+}
+
+h1{
+    color: #0A3641;
+    font-family: "Instrument Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+h2{
+    color: #000;
+    font-family: "Instrument Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1em;
+}
+
+.product{
+    color: #000;
+    font-family: "Instrument Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+p{
+    color: #000;
+    font-family: "Instrument Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.subtotal{
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 1em;
+    border-top-style: solid;
+    border-color: #000;
+}
+
+.address{
+    margin-top: 2em;
+}
+
+form{
+    grid-row: span 4/span 4;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    color: #000000a8;
+    font-family: "Instrument Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 40px;
+}
+
+input{
+    margin: 8px 0;
+    padding: 15px 20px;
+    width: 100%;
+    border-style: solid;
+    border-color: #D36245;
+    border-width: 3px;
+}
+
+legend{
+    line-height: 3em;
+    font-size: 36px;
+    color: #0A3641;
+}
+
+.buttons{
+    grid-row-start: 5;
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttons a{
+    display: flex;
+    text-decoration: none;
+    font-size: 2em;
+    color: white;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 1em;
+    background-color:#D36245;
+    margin: 12px;
+}
+
+.buttons .back{
+    color:#D36245;
+    background-color: white;
+}
+
+main a:hover{
+    text-decoration: underline;
+}
+
+/*FOOTER DESIGN START*/
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    background-color: #0A3641;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer ul li i {
+    margin: 40px;
+    font-size: 55px;
+}
+
+/*FOOTER DESIGN END*/
+
+@media (min-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav{
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    nav li {
+        padding: 0 30px;
+        width: auto;
+    }    
+    nav a{
+        display: inline-block;
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+@media (max-width: 599px){
+    nav{
+        background-color: #0A3641;
+    }
+    nav a{
+        font-size: 26px;
+    }
+    .gridparent{
+        display: block;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 85vw;
+    }
+    .progress{
+        width: 85vw;
+        margin: 30px;
+    }
+    .subtotal{
+        font-size: 30px;
+    }
+    main{
+        margin-left: 30px;
+    }
+    form{
+        max-width: 85vw;
+    }
+    aside{
+        max-width: 85vw;
+        padding: 2em;
+    }
+}

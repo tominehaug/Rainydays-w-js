@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HEADER DESIGN START*/
+
+nav, #hamburger-menu {
+    display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+    display: block;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    background-color: #0A3641;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.logo{
+    max-width: 320px;
+    min-width: 300px;
+    padding: 30px;
+}
+
+.cart{
+    max-width: 70px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+nav{
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: none;
+    padding: 20px 0;
+    z-index: 1;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav li{
+    padding: 30px 50px;
+    
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 2em;
+    color: #D36245;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+nav a:hover{
+    font-weight: 700;
+}
+
+/*HEADER DESIGN END*/
+
+main{
+    margin: 5em;
+}
+
+h1{
+    color: #000;
+    font-family: "Instrument Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    line-height: 1.5;
+}
+
+h2{
+    font-family: "Instrument Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+main img{
+    max-width: 600px;
+    margin-bottom: 1.5em;
+}
+
+.category {
+    color: rgba(0, 0, 0, 0.47);
+    text-transform: uppercase;
+    line-height: 2;
+}
+
+.price{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 2;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 100px;
+}
+
+.productimage {grid-area: 1 / 1 / 2 / 2; }
+
+.description {grid-area: 1 / 3 / 2 / 4; }
+
+.description h2{
+    color: #0A3641;
+}
+
+.description h3{
+    color: #0A3641;
+    font-family: "Instrument Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2;
+}
+
+.description p{
+    color: #0A3641;
+    font-family: "Instrument Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.description ul{
+    margin: 1em;
+}
+.description li{
+    color: #0A3641;
+    font-family: "Instrument Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.overview {
+    grid-area: 1 / 2 / 2 / 3; 
+    line-height: 2;
+}
+
+.overview p{
+    color: rgba(0, 0, 0, 0.69);
+    font-family: "Instrument Sans";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.cartbutton{
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+
+.cartbutton a{
+    text-decoration: none;
+    font-size: 2em;
+    color: white;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 1em;
+    background-color:#D36245;
+}
+
+aside{
+    margin-bottom: 4em;
+    max-width: 400px;
+    padding: 2em;
+    background-color: rgba(217, 217, 217, 0.41);
+}
+
+form{
+    grid-row: span 4/span 4;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3em;
+    font-size: 36px;
+    color: #0A3641;
+}
+
+input{
+    margin: 8px 0;
+    padding: 15px 20px;
+    width: 100%;
+    border-style: solid;
+    border-color: #D36245;
+    border-width: 3px;
+}
+
+label{
+    margin-right:5px;
+}
+
+
+/*FOOTER DESIGN START*/
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    background-color: #0A3641;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer ul li i {
+    margin: 40px;
+    font-size: 55px;
+}
+
+/*FOOTER DESIGN END*/
+
+@media (min-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav{
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    nav li {
+        padding: 0 30px;
+        width: auto;
+    }    
+    nav a{
+        display: inline-block;
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+@media (max-width: 599px){
+    nav{
+        background-color: #0A3641;
+    }
+    nav a{
+        font-size: 26px;
+    }
+
+    main{
+        display: block;
+    }
+
+    main img{
+        max-width: 440px;
+    }
+
+}

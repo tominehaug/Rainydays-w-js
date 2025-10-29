@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HEADER DESIGN START*/
+
+nav, #hamburger-menu {
+    display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+    display: block;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    background-color: #0A3641;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.logo{
+    max-width: 320px;
+    min-width: 300px;
+    padding: 30px;
+}
+
+.cart{
+    max-width: 70px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+nav{
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: none;
+    padding: 20px 0;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav li{
+    padding: 30px 50px;
+    
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 2em;
+    color: #D36245;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+nav a:hover{
+    font-weight: 700;
+}
+
+/*HEADER DESIGN END*/
+
+h1{
+    color: #0A3641;
+    font-family: "Instrument Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2;
+    text-transform: uppercase;
+    display: block;
+    margin: 50px;
+}
+
+main{
+    text-align: center;
+}
+
+main img{
+    max-width: 500px;
+}
+
+.productlist {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    grid-template-rows: auto, 80px, auto, 80px, auto, 80px, auto, 80px, auto, 80px, auto, 80px, auto, 80px;
+    grid-column-gap: 0px;
+    grid-row-gap: 40px;
+    text-align: right;
+}
+
+.jacket1 { grid-area: 1 / 1 / 2 / 2; }
+.jacket1price { grid-area: 2 / 1 / 3 / 2; }
+.jacket2 { grid-area: 1 / 2 / 2 / 3; }
+.jacket2price { grid-area: 2 / 2 / 3 / 3; }
+.jacket3 { grid-area: 3 / 1 / 4 / 2; }
+.jacket3price { grid-area: 4 / 1 / 5 / 2; }
+.jacket4 { grid-area: 3 / 2 / 4 / 3; }
+.jacket4price { grid-area: 4 / 2 / 5 / 3; }
+.jacket5 { grid-area: 5 / 1 / 6 / 2; }
+.jacket5price { grid-area: 6 / 1 / 7 / 2; }
+.jacket6 { grid-area: 5 / 2 / 6 / 3; }
+.jacket6price { grid-area: 6 / 2 / 7 / 3; }
+.jacket7 { grid-area: 7 / 1 / 8 / 2; }
+.jacket7price { grid-area: 8 / 1 / 9 / 2; }
+
+.productlist p{
+    font-size: 50px;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.page{
+    display: block;
+    padding: 4em;
+    font-size: 30px;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    color: rgb(95, 93, 93);
+    position: relative;
+    text-align: center;
+}
+
+aside{
+    display: block;
+    padding: 4em;
+    text-align: left;
+    float:left;
+}
+
+aside h2{
+    font-size: 50px;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #D36245;
+}
+
+aside label{
+    font-size: 30px;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+/*FOOTER DESIGN START*/
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    background-color: #0A3641;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer ul li i {
+    margin: 40px;
+    font-size: 55px;
+}
+
+
+@media (min-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav{
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    nav li {
+        padding: 0 30px;
+        width: auto;
+    }    
+    nav a{
+        display: inline-block;
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+@media (max-width: 599px){
+    nav{
+        background-color: #0A3641;
+    } 
+    
+    nav a{
+        font-size: 1.2em;
+    }
+
+    .productlist{
+        display:block;
+        text-align: center;
+    }
+
+    main img{
+        max-width: 350px;
+    }
+    aside{
+        float: none;
+    }
+}
