@@ -23,7 +23,7 @@ function displayJackets(jackets) {
 function displayImg(jackets) {
   const container = document.getElementById("productlist");
   jackets.forEach((jacket) => {
-    const imgDiv = document.createElement("img");
+    const image = document.createElement("img");
     img.src = data.image.url;
     img.alt = data.image.alt;
     container.appendChild(img);
