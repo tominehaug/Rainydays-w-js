@@ -100,32 +100,15 @@ main img{
     max-width: 500px;
 }
 
-.productlist {
-    display: grid;
-    grid-template-columns: repeat(2, 600px);
-    grid-template-rows: auto, 80px, auto, 80px, auto, 80px, auto, 80px, auto, 80px, auto, 80px, auto, 80px;
-    grid-column-gap: 0px;
-    grid-row-gap: 40px;
-    text-align: right;
-}
-
-.jacket1 { grid-area: 1 / 1 / 2 / 2; }
-.jacket1price { grid-area: 2 / 1 / 3 / 2; }
-.jacket2 { grid-area: 1 / 2 / 2 / 3; }
-.jacket2price { grid-area: 2 / 2 / 3 / 3; }
-.jacket3 { grid-area: 3 / 1 / 4 / 2; }
-.jacket3price { grid-area: 4 / 1 / 5 / 2; }
-.jacket4 { grid-area: 3 / 2 / 4 / 3; }
-.jacket4price { grid-area: 4 / 2 / 5 / 3; }
-.jacket5 { grid-area: 5 / 1 / 6 / 2; }
-.jacket5price { grid-area: 6 / 1 / 7 / 2; }
-.jacket6 { grid-area: 5 / 2 / 6 / 3; }
-.jacket6price { grid-area: 6 / 2 / 7 / 3; }
-.jacket7 { grid-area: 7 / 1 / 8 / 2; }
-.jacket7price { grid-area: 8 / 1 / 9 / 2; }
-
-.productlist p{
-    font-size: 50px;
+#productlist {
+    display: flex;
+    border: 4px solid black;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-evenly;
+    font-size: 30px;
     font-family: "Instrument Sans";
     font-style: normal;
     font-weight: 600;
