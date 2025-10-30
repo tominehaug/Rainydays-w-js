@@ -35,7 +35,7 @@ function displayPrice(jackets) {
   jackets.forEach((jacket) => {
     const priceDiv = document.createElement("div");
     priceDiv.textContent = jacket.price;
-    container.appendChild(PriceDiv);
+    container.appendChild(priceDiv);
   });
 }
 
