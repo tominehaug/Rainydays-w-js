@@ -12,38 +12,38 @@ async function fetchJackets() {
 
 function displayJackets(jackets) {
   const container = document.getElementById("productlist");
+  container.innerHTML = "";
   jackets.forEach((jacket) => {
     console.log(jacket);
+    const link = document.createElement("a");
+    link.href = `product/index.html?id=${jacket.id}`;
+    link.classList.add("jacket-link");
+
     const nameDiv = document.createElement("div");
     nameDiv.textContent = jacket.title;
+    nameDiv.classList.add("name")
     container.appendChild(nameDiv);
-  });
-}
 
-function displayImg(jackets) {
-  const container = document.getElementById("productlist");
-  jackets.forEach((jacket) => {
-    const image = document.createElement("img");
-    img.src = data.image.url;
-    img.alt = data.image.alt;
-    container.appendChild(img);
-  });
-}
-
-function displayPrice(jackets) {
-  const container = document.getElementById("productlist");
-  jackets.forEach((jacket) => {
     const priceDiv = document.createElement("div");
-    priceDiv.textContent = jacket.price;
+    priceDiv.textContent = jacket.price + "kr";
+    priceDiv.classList.add("price")
     container.appendChild(priceDiv);
+    
+    const image = document.createElement("img");
+    image.src = jacket.image.url;
+    image.alt = jacket.image.alt;
+    container.appendChild(image);
+
+    link.appendChild(image);
+    link.appendChild(nameDiv);
+    link.appendChild(priceDiv);
+    container.appendChild(link);
   });
 }
 
 async function init() {
   const jackets = await fetchJackets();
   if (jackets) displayJackets(jackets);
-  if (jackets) displayImg(jackets);
-  if (jackets) displayPrice(jackets);
 }
 
 init();
