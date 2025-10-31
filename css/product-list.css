@@ -90,14 +90,7 @@ h1{
     text-transform: uppercase;
     display: block;
     margin: 50px;
-}
-
-main{
     text-align: center;
-}
-
-main img{
-    max-width: 500px;
 }
 
 #productlist{
@@ -108,6 +101,7 @@ main img{
     align-items: center;
     align-content: space-evenly;
     font-family: "Instrument Sans";
+    text-align: right;
 }
 
 #productlist img{
@@ -119,6 +113,7 @@ main img{
 .price{
     font-size: 50px;
     font-weight: 600;
+    color:#0A3641;
 }
 
 .name{
