@@ -21,12 +21,12 @@ function displayJackets(jackets) {
 
     const nameDiv = document.createElement("div");
     nameDiv.textContent = jacket.title;
-    nameDiv.classList.add("name")
+    nameDiv.classList.add("name");
     container.appendChild(nameDiv);
 
     const priceDiv = document.createElement("div");
     priceDiv.textContent = jacket.price + "kr";
-    priceDiv.classList.add("price")
+    priceDiv.classList.add("price");
     container.appendChild(priceDiv);
     
     const image = document.createElement("img");

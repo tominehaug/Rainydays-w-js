@@ -118,6 +118,7 @@ main img{
     font-weight: 700;
     font-size: 40px;
     line-height: 2;
+    color: #0A3641;
 }
 
 main{
@@ -129,13 +130,13 @@ main{
 
 .productimage {grid-area: 1 / 1 / 2 / 2; }
 
-.description {grid-area: 1 / 3 / 2 / 4; }
+.characterstics {grid-area: 1 / 3 / 2 / 4; }
 
-.description h2{
+.characteristics h2{
     color: #0A3641;
 }
 
-.description h3{
+.characteristics h3{
     color: #0A3641;
     font-family: "Instrument Sans";
     font-size: 18px;
@@ -144,7 +145,7 @@ main{
     line-height: 2;
 }
 
-.description p{
+.characteristics p{
     color: #0A3641;
     font-family: "Instrument Sans";
     font-size: 18px;
@@ -153,10 +154,10 @@ main{
     line-height: 2;
 }
 
-.description ul{
+.characteristics ul{
     margin: 1em;
 }
-.description li{
+.characteristics li{
     color: #0A3641;
     font-family: "Instrument Sans";
     font-size: 22px;
@@ -165,12 +166,11 @@ main{
     line-height: 2;
 }
 
-.overview {
-    grid-area: 1 / 2 / 2 / 3; 
+#overview {
     line-height: 2;
 }
 
-.overview p{
+#overview p{
     color: rgba(0, 0, 0, 0.69);
     font-family: "Instrument Sans";
     font-size: 25px;
@@ -184,9 +184,6 @@ main{
 .cartbutton{
     margin-top: 4em;
     margin-bottom: 3em;
-}
-
-.cartbutton a{
     text-decoration: none;
     font-size: 2em;
     color: white;
