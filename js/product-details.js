@@ -22,7 +22,7 @@ function displayProduct(product) {
     const productimage = document.createElement("img")
     productimage.src = product.image.url;
     productimage.alt = product.image.alt;
-    productimage.classList.add = ("productimage")
+    productimage.classList.add("productimage");
     content.appendChild(productimage);
 
     const container = document.createElement("div");
@@ -75,25 +75,32 @@ function displayProduct(product) {
     form.innerHTML = 
         `<fieldset>
             <label>Size</label>
-            <select>
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
+            <select id="sizeSelect">
+                <option value="" selected></option>
+                <option value="s">Small</option>
+                <option value="m">Medium</option>
+                <option value="l">Large</option>
+                <option value="xl">X-Large</option>
             </select>
         </fieldset>
         <fieldset>
             <label>Quantity</label>
-            <select>
-                <option value="one">1</option>
-                <option value="two">2</option>
-                <option value="three">3</option>
-                <option value="four">4</option>
-                <option value="five">5</option>
-                <option value="six">6</option>
+            <select id="quantitySelect">
+                <option value="0" selected></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
             </select>
         </fieldset>`;
 
-    const cartbutton = document.createElement("div");
+    const sizeSelect = document.getElementById("sizeSelect")
+    const quantitySelect = document.getElementById("quantitySelect");
+
+    const cartbutton = document.createElement("button");
+    cartbutton.type = "button";
     cartbutton.textContent = "Add to cart";
     cartbutton.classList.add("cartbutton");
     container.appendChild(cartbutton);
@@ -101,15 +108,49 @@ function displayProduct(product) {
     let addedToCart = false;
 
     cartbutton.addEventListener('click', function (event) {
+        const size = sizeSelect.value;
+        const quantity = quantitySelect.value;
+
+        const item = {
+        id: jacketId,
+        imageUrl: product.image.url,
+        imageAlt: product.image.alt,
+        name: product.title,
+        price: `${product.price}`,
+        size: size,
+        quantity: parseInt(quantity),
+        };
+
+        if (size ==="" || quantity === "0"){
+            alert("Please select size and quantity.");
+            return;
+        }
+
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        const existingItem = cart.find(
+            (cartItem) => cartItem.id === item.id && cartItem.size === item.size
+        );
+
+        if (existingItem){
+            existingItem.quantity = quantity;
+        }else{
+            cart.push(item);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        console.log("updated cart:", cart);
+
         if (!addedToCart) {
             cartbutton.textContent = "Go to cart >";
             addedToCart = true;
-        }
-
-        else{
-            window.location.href = "../checkout/index.html";
+        }else{
+            window.location.href = `../checkout/index.html`;
         }
     });
+
+
 
 }
 
@@ -119,3 +160,4 @@ async function init() {
 }
 
 init();
+

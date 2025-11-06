@@ -47,38 +47,3 @@ async function init() {
 }
 
 init();
-
-
-
-
-/*
-function displayJackets(images) {
-  const container = document.getElementById("jacketImg");
-  jackets.forEach((images) => {
-    console.log(images);
-    const imgDiv = document.createElement("div");
-    nameDiv.textContent = jacket.image;
-    container.appendChild(imgDiv);
-  });
-}
-
-async function loadImages() {
-  try {
-    const response = await fetch("https://v2.api.noroff.dev/rainy-days");
-    if (!response.ok) throw new Error("There was a failed network response");
-    const images = await response.json();
-
-    const container = document.getElementById("jacketImg");
-
-    images.forEach(image => {
-      const img = document.createElement("img");
-      img.src = data.image.url;
-      img.alt = data.image.alt;
-      jacketImg.appendChild(img);
-    });
-  } catch (error) {
-    console.error("Error loading images:", error);
-  }
-}
-*/
-
