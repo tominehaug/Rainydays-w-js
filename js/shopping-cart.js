@@ -1,4 +1,4 @@
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 console.log(cart);
 
@@ -6,6 +6,7 @@ const itemList = document.getElementById("item-list");
 itemList.innerHTML="";
 
 function updateSubtotal(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let subtotal = 0;
     cart.forEach(item => {
         subtotal += item.price * item.quantity;
@@ -51,16 +52,46 @@ function displayItems(items) {
         infoDiv.appendChild(price);
         
         const deleteButton = document.createElement("button");
-        deleteButton.id = "delete-button";
+        deleteButton.classList.add = "delete-button";
         deleteButton.textContent = "Delete";
         infoDiv.appendChild(deleteButton);
+        deleteButton.addEventListener('click', function (event){
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            const itemIndex = cart.findIndex(cartItem => 
+                cartItem.id === item.id && cartItem.size === item.size
+            );
+
+            console.log(itemIndex);
+
+            if (itemIndex !== -1){
+                cart[itemIndex].quantity-=1;
+                if (cart[itemIndex].quantity <= 0){
+                    cart.splice(itemIndex, 1);
+                }
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayItems(cart);
+            updateSubtotal();
+        })
     })
-        
 }
+
+    const emptyCart = document.createElement("button");
+    emptyCart.id = "empty-cart";
+    emptyCart.textContent = "CLEAR CART";
+    itemList.after(emptyCart);
+    emptyCart.addEventListener('click', function(event){
+        localStorage.removeItem("cart");
+        itemList.innerHTML = "<p>Your cart is empty.</p>";
+        emptyCart.remove();
+    })
 
     
 if (cart.length === 0) {
     itemList.innerHTML = "<p>Your cart is empty.</p>";
 }else{
     displayItems(cart);
+    updateSubtotal();
 }

@@ -145,13 +145,13 @@ function displayProduct(product) {
         if (!addedToCart) {
             cartbutton.textContent = "Go to cart >";
             addedToCart = true;
+            const confirm = document.createElement("p");
+            confirm.textContent = "Added to cart!";
+            cartbutton.before(confirm);
         }else{
             window.location.href = `../checkout/index.html`;
         }
     });
-
-
-
 }
 
 async function init() {

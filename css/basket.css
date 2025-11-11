@@ -161,7 +161,20 @@ p{
     border-color: black;
 }
 
-#delete-button{
+.delete-button{
+    font-size: 20px;
+    margin-top: 50px;
+    color: rgba(0, 0, 0, 0.69);
+    font-family: "Instrument Sans";
+}
+
+#empty-cart{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    font-family: "Instrument Sans";
+    color: rgb(170, 31, 31);
     font-size: 20px;
     margin-top: 50px;
 }
