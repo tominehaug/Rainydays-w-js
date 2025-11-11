@@ -61,7 +61,6 @@ nav ul{
 
 nav li{
     padding: 30px 50px;
-    
 }
 
 nav a{
@@ -102,12 +101,11 @@ h1{
     font-weight: 700;
     line-height: 1.5;
     text-transform: uppercase;
-    margin: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 h2{
-    grid-column: span 2/span 2;
-    grid-column-start: 2;
     color: #000;
     font-family: "Instrument Sans";
     font-size: 30px;
@@ -115,23 +113,6 @@ h2{
     font-weight: 700;
     line-height: normal;
     line-height: 1.5;
-}
-
-#item-list{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    max-width: 900px;
-    padding: 2em;
-    background-color: rgba(217, 217, 217, 0.41);
-}
-
-.item-list img{
-    grid-row: span 2/span 2;
-    max-width: 300px;
-    height: auto;
-    margin-right: 20px;
 }
 
 p{  
@@ -143,13 +124,31 @@ p{
     line-height: 2;
 }
 
-.info{
-    grid-row: span 2/span 2;
-    grid-row-start: 2;
-    grid-column-start: 2;
+#item-list{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    max-width: 900px;
+    padding: 2em;
+    background-color: rgba(217, 217, 217, 0.41);
 }
 
-.subtotal{
+#item-list img{
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.item-container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.item-container .info{
+    flex: 1;
+}
+
+#subtotal{
     display: block;
     text-align: end;
     margin-top: 3em;
@@ -157,11 +156,14 @@ p{
     padding: 5px;
     font-size: 36px;
     color:#000;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 600;
     border-top-style: solid;
     border-color: black;
-    max-width: 85vw;
+}
+
+#delete-button{
+    font-size: 20px;
+    margin-top: 50px;
 }
 
 .buttons {
