@@ -77,10 +77,10 @@ function displayProduct(product) {
             <label>Size</label>
             <select id="sizeSelect">
                 <option value="" selected></option>
-                <option value="s">Small</option>
-                <option value="m">Medium</option>
-                <option value="l">Large</option>
-                <option value="xl">X-Large</option>
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">X-Large</option>
             </select>
         </fieldset>
         <fieldset>

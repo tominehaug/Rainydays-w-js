@@ -78,16 +78,15 @@ function displayItems(items) {
     })
 }
 
-    const emptyCart = document.createElement("button");
-    emptyCart.id = "empty-cart";
-    emptyCart.textContent = "CLEAR CART";
-    itemList.after(emptyCart);
-    emptyCart.addEventListener('click', function(event){
-        localStorage.removeItem("cart");
-        itemList.innerHTML = "<p>Your cart is empty.</p>";
-        emptyCart.remove();
-    })
-
+const emptyCart = document.createElement("button");
+emptyCart.id = "empty-cart";
+emptyCart.textContent = "CLEAR CART";
+itemList.after(emptyCart);
+emptyCart.addEventListener('click', function(event){
+    localStorage.removeItem("cart");
+    itemList.innerHTML = "<p>Your cart is empty.</p>";
+    emptyCart.remove();
+})
     
 if (cart.length === 0) {
     itemList.innerHTML = "<p>Your cart is empty.</p>";
