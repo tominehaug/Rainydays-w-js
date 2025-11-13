@@ -9,11 +9,13 @@ function updateSubtotal(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let subtotal = 0;
     cart.forEach(item => {
-        subtotal += item.price * item.quantity;
+        subtotal += Number(item.price) * Number(item.quantity);
     })
 
+    const subtotalFixed = subtotal.toFixed(2);
+
     const subtotalDisplay = document.getElementById("subtotal");
-    subtotalDisplay.textContent = "SUBTOTAL: " + subtotal + "kr";
+    subtotalDisplay.textContent = "SUBTOTAL: " + subtotalFixed + "kr";
 }
 
 updateSubtotal();

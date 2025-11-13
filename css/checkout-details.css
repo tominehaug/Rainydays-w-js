@@ -104,6 +104,7 @@ main{
     padding: 4em;
     background-color: #EFEFEF;
     max-width: fit-content;
+    margin-right: 30px;
 }
 
 #summary img{
@@ -119,6 +120,7 @@ h1{
     font-weight: 700;
     line-height: 2;
     text-transform: uppercase;
+    margin-top: 1em;
 }
 
 h2{
@@ -152,14 +154,14 @@ p{
 }
 
 .subtotal{
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 600;
     margin-top: 2em;
     border-top-style: solid;
     border-color: #000;
 }
 
-.address{
+.address, .cardinfo{
     margin-top: 2em;
 }
 
@@ -191,6 +193,10 @@ legend{
     color: #0A3641;
 }
 
+button{
+    all: unset;
+}
+
 .buttons{
     grid-row-start: 5;
     grid-column-start: 2;
@@ -202,7 +208,7 @@ legend{
 .buttons a{
     display: flex;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.7em;
     color: white;
     font-family: "Instrument Sans";
     font-style: normal;
