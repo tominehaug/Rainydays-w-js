@@ -57,8 +57,7 @@ calculateSubtotal();
 const form = document.getElementById("details-form");
 const placeOrder = document.getElementById("submit-button");
 
-form.addEventListener('sumbit', function (event){
-    event.preventDefault();
+function validateForm(){
 
     const nameFormInput = document.getElementById("name");
     const phoneInput = document.getElementById("phone");
@@ -78,7 +77,7 @@ form.addEventListener('sumbit', function (event){
     const streetnumberError = document.getElementById("streetnumber-error");
     const cityError = document.getElementById("city-error");
     const zipcodeError = document.getElementById("zipcode-error");
-    const cardnumberError = document.getElementById("card-number-error");
+    const cardnumberError = document.getElementById("cardnumber-error");
     const expirationError = document.getElementById("date-error");
     const cvcError = document.getElementById("cvc-error");
 
@@ -94,8 +93,6 @@ form.addEventListener('sumbit', function (event){
     cvcError.textContent='';
 
     const nameForm = nameFormInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const email = emailInput.value.trim();
     const streetname = streetnameInput.value.trim();
     const streetnumber = streetnumberInput.value.trim();
     const city = cityInput.value.trim();
@@ -107,7 +104,7 @@ form.addEventListener('sumbit', function (event){
     let isValid = true;
 
     if (nameForm ===''){
-        nameFormError.textContent = "Please fill out this required field."
+        nameError.textContent = "Please fill out this required field."
         isValid = false;
     }
     if (streetname === ''){
@@ -130,9 +127,7 @@ form.addEventListener('sumbit', function (event){
         cardnumberError.textContent = "Please enter a valid card number.";
         isValid = false;
     }
-
     const today = new Date();
-    console.log(today);
 
     if (expiration === '' || (expiration < today)){
         expirationError.textContent="Please enter valid information."
@@ -143,31 +138,29 @@ form.addEventListener('sumbit', function (event){
         isValid = false;
     }
     
-    if (phone.checkValidity()){
+    if (phoneInput.checkValidity()){
     }else{
         phoneError.textContent = "Please enter valid phone number."
         isValid = false;
     }
-    if (email.checkValidity()){
+    if (emailInput.checkValidity()){
     }else{
         emailError.textContent = "Please enter valid email address."
         isValid = false;
     }
 
+    return isValid;
+}
+
+const placeOrderBtn = document.getElementById("place-order");
+placeOrderBtn.addEventListener('click', function (event){
+    event.preventDefault();
+
+    const isValid = validateForm();
+
     if (isValid){
         console.log('Form is valid. Submitting data...');
-        console.log({
-            name: nameForm,
-            phoneNumber: phone,
-            email: email,
-            streetname: streetname,
-            streetnumber: streetnumber,
-            city: city,
-            zipcode: zipcode,
-            cardnumber: cardnumber,
-            expirationDate: expiration,
-            cvc: cvc,
-        });
+        window.location.href = "confirmation/index.html";
     }
 })
 
