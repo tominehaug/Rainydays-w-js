@@ -1,3 +1,5 @@
+let allJackets = [];
+
 async function fetchJackets() {
   try {
     const response = await fetch("https://v2.api.noroff.dev/rainy-days");
@@ -41,9 +43,31 @@ function displayJackets(jackets) {
   });
 }
 
+function filterJackets() {
+  const womenChecked = document.getElementById("womenCheckbox").checked;
+  const menChecked = document.getElementById("menCheckbox").checked;
+
+  if (!womenChecked && !menChecked) {
+  filtered = allJackets;
+  }else{
+  filtered = allJackets.filter((jacket) => {
+    if (jacket.gender === "Female" && womenChecked) return true;
+    if (jacket.gender === "Male" && menChecked) return true;
+    return false;
+  });
+  }
+
+  displayJackets(filtered);
+}
+
+document.getElementById("womenCheckbox").addEventListener("change", filterJackets);
+document.getElementById("menCheckbox").addEventListener("change", filterJackets);
+
 async function init() {
-  const jackets = await fetchJackets();
-  if (jackets) displayJackets(jackets);
+  allJackets = await fetchJackets();
+  if (!allJackets) return;
+
+  displayJackets(allJackets);
 }
 
 init();
