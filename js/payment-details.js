@@ -55,6 +55,7 @@ calculateSubtotal();
 
 
 const form = document.getElementById("details-form");
+const placeOrder = document.getElementById("submit-button");
 
 form.addEventListener('sumbit', function (event){
     event.preventDefault();
@@ -129,8 +130,13 @@ form.addEventListener('sumbit', function (event){
         cardnumberError.textContent = "Please enter a valid card number.";
         isValid = false;
     }
-    if (expiration === '' || ){
+
+    const today = new Date();
+    console.log(today);
+
+    if (expiration === '' || (expiration < today)){
         expirationError.textContent="Please enter valid information."
+        isValid = false;
     }
     if ((cvc === '') || isNaN(cvc) || (cvc.length !== 3)){
         cvcError.textContent = "Please enter valid info."
