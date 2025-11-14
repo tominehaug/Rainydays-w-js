@@ -1,4 +1,4 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cartContent = JSON.parse(localStorage.getItem("cart")) || [];
 
 const url = window.location.href;
 
@@ -9,15 +9,18 @@ const iconImg = document.createElement("img");
 iconImg.classList.add("cart");
 cartIcon.appendChild(iconImg);
 
-if ((cart.length === 0) && !url.includes("checkout")){
+console.log("URL:", url);
+console.log("Checkout in URL:", url.includes('checkout'));
+
+if ((cartContent.length === 0) && !url.includes('checkout')){
     iconImg.src = "/assets/shopping-cart-icon.png";
 }
-if ((cart.length > 0) && !url.includes("checkout")){
+else if ((cartContent.length > 0) && !url.includes('checkout')){
     iconImg.src = "/assets/shopping-cart-icon5.png"
 }
-if ((cart.length === 0) && url.includes("checkout")){
+else if ((cartContent.length === 0) && url.includes('checkout')){
     iconImg.src = "../../assets/shopping-cart-icon-4.png";
 }
-if ((cart.length > 0) && url.includes("checkout")){
+else if ((cartContent.length > 0) && url.includes('checkout')){
     iconImg.src = "../../assets/shopping-cart-icon6.png";
 }
