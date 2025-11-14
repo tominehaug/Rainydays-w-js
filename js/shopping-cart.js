@@ -74,6 +74,7 @@ function displayItems(items) {
             }
 
             localStorage.setItem("cart", JSON.stringify(cart));
+
             displayItems(cart);
             updateSubtotal();
         })
@@ -87,11 +88,15 @@ itemList.after(emptyCart);
 emptyCart.addEventListener('click', function(event){
     localStorage.removeItem("cart");
     itemList.innerHTML = "<p>Your cart is empty.</p>";
+    const continueBtn = document.querySelector(".continue");
+    continueBtn.remove();
     emptyCart.remove();
 })
     
 if (cart.length === 0) {
     itemList.innerHTML = "<p>Your cart is empty.</p>";
+    continueBtn.remove();
+    emptyCart.remove();
 }else{
     displayItems(cart);
     updateSubtotal();

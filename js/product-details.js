@@ -69,18 +69,17 @@ function displayProduct(product) {
     ul.appendChild(li1);
     ul.appendChild(li2);
 
+    const inputSection = document.createElement("div");
+    inputSection.classList.add("input-section");
+    content.appendChild(inputSection);
     const form = document.createElement("form");
-    container.appendChild(form);
+    inputSection.appendChild(form);
 
     form.innerHTML = 
         `<fieldset>
             <label>Size</label>
             <select id="sizeSelect">
                 <option value="" selected></option>
-                <option value="S">Small</option>
-                <option value="M">Medium</option>
-                <option value="L">Large</option>
-                <option value="XL">X-Large</option>
             </select>
         </fieldset>
         <fieldset>
@@ -99,11 +98,20 @@ function displayProduct(product) {
     const sizeSelect = document.getElementById("sizeSelect")
     const quantitySelect = document.getElementById("quantitySelect");
 
+    const sizes = product.sizes;
+
+    sizes.forEach((size) => {
+        const option = document.createElement("option");
+        option.value = size;
+        option.textContent = size;
+        sizeSelect.appendChild(option);
+    });
+
     const cartbutton = document.createElement("button");
     cartbutton.type = "button";
     cartbutton.textContent = "Add to cart";
     cartbutton.classList.add("cartbutton");
-    container.appendChild(cartbutton);
+    inputSection.appendChild(cartbutton);
 
     let addedToCart = false;
 
@@ -143,7 +151,7 @@ function displayProduct(product) {
         console.log("updated cart:", cart);
 
         if (!addedToCart) {
-            cartbutton.textContent = "Go to cart >";
+            cartbutton.textContent = "Go to cart";
             addedToCart = true;
             const confirm = document.createElement("p");
             confirm.textContent = "Added to cart!";
