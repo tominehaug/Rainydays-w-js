@@ -5,6 +5,14 @@ console.log(cart);
 const itemList = document.getElementById("item-list");
 itemList.innerHTML="";
 
+const continueBtn = document.querySelector(".continue");
+
+if (cart.length === 0) {
+    itemList.innerHTML = "<p>Your cart is empty.</p>";
+    continueBtn.remove();
+    emptyCart.remove();
+}
+
 function updateSubtotal(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let subtotal = 0;
@@ -88,7 +96,6 @@ itemList.after(emptyCart);
 emptyCart.addEventListener('click', function(event){
     localStorage.removeItem("cart");
     itemList.innerHTML = "<p>Your cart is empty.</p>";
-    const continueBtn = document.querySelector(".continue");
     continueBtn.remove();
     emptyCart.remove();
 })

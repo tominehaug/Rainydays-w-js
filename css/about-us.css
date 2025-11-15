@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*HEADER DESIGN START*/
+
+nav, #hamburger-menu {
+    display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+    display: block;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    background-color: #0A3641;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.logo{
+    max-width: 320px;
+    min-width: 300px;
+    padding: 30px;
+}
+
+.current{
+    font-weight: 700;
+}
+
+.cart{
+    max-width: 70px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+nav{
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: none;
+    padding: 20px 0;
+    z-index: 1;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav li{
+    padding: 30px 50px;
+    
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 2em;
+    color: #D36245;
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+nav a:hover{
+    font-weight: 700;
+}
+
+/*HEADER DESIGN END*/
+
+
+body{
+    background-image: url(../images/water.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+main{
+    display:block;
+    position: relative;
+    right:0;
+    background-color: white;
+    max-width: 700px;
+    padding:2em;
+    padding-bottom: 62px;
+}
+
+h1{
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2;
+    text-transform: uppercase;
+    font-size: 96px;
+    color: #0A3641;
+}
+
+p{
+    font-family: "Instrument Sans";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 24px;
+    color: #0A3641;
+}
+
+.bold{
+    font-weight: 600;
+    margin-top: 1em;
+}
+
+
+/*FOOTER DESIGN START*/
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    background-color: white;
+    display: flex;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer ul li i {
+    margin: 40px;
+    font-size: 55px;
+}
+
+/*FOOTER DESIGN END*/
+
+@media (min-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav{
+        display: block;
+        position: static;
+        width: auto;
+        padding: 0;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    nav li {
+        padding: 0 30px;
+        width: auto;
+    }    
+    nav a{
+        display: inline-block;
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+
+@media (max-width: 599px){
+    nav a{
+        font-size: 26px;
+    }
+
+    h1{
+        font-size: 70px;
+    }
+}
