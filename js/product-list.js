@@ -16,7 +16,6 @@ function displayJackets(jackets) {
   const container = document.getElementById("productlist");
   container.innerHTML = "";
   jackets.forEach((jacket) => {
-    console.log(jacket);
     const link = document.createElement("a");
     link.href = `product/index.html?id=${jacket.id}`;
     link.classList.add("jacket-link");

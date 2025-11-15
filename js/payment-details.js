@@ -1,7 +1,5 @@
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-console.log(cart);
-
 const orderSummary = document.getElementById("summary");
 orderSummary.innerHTML = "";
 
@@ -134,7 +132,7 @@ function validateForm(){
         isValid = false;
     }
     if ((cvc === '') || isNaN(cvc) || (cvc.length !== 3)){
-        cvcError.textContent = "Please enter valid info."
+        cvcError.textContent = "Please enter valid information."
         isValid = false;
     }
     
@@ -159,7 +157,6 @@ placeOrderBtn.addEventListener('click', function (event){
     const isValid = validateForm();
 
     if (isValid){
-        console.log('Form is valid. Submitting data...');
         localStorage.clear();
 
         window.location.href = "confirmation/index.html";

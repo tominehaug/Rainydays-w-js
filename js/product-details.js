@@ -1,8 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const jacketId = params.get("id");
 
-console.log("Jacket ID from URL:", jacketId);
-
 async function fetchProduct() {
   try {
     const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${jacketId}`);
@@ -147,8 +145,6 @@ function displayProduct(product) {
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-
-        console.log("updated cart:", cart);
 
         if (!addedToCart) {
             cartbutton.textContent = "Go to cart";

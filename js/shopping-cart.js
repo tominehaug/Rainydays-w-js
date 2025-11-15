@@ -1,7 +1,5 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-console.log(cart);
-
 const itemList = document.getElementById("item-list");
 itemList.innerHTML="";
 
@@ -71,8 +69,6 @@ function displayItems(items) {
             const itemIndex = cart.findIndex(cartItem => 
                 cartItem.id === item.id && cartItem.size === item.size
             );
-
-            console.log(itemIndex);
 
             if (itemIndex !== -1){
                 cart[itemIndex].quantity-=1;
