@@ -160,8 +160,8 @@ placeOrderBtn.addEventListener('click', function (event){
 
     if (isValid){
         console.log('Form is valid. Submitting data...');
+        localStorage.clear();
+
         window.location.href = "confirmation/index.html";
     }
 })
-
-
