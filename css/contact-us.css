@@ -1,210 +1,218 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*HEADER DESIGN START*/
 
-nav, #hamburger-menu {
-    display: none;
+nav,
+#hamburger-menu {
+  display: none;
 }
 
 #hamburger-menu:checked ~ nav {
-    display: block;
+  display: block;
 }
 
-header{
-    position: relative;
-    width: 100%;
-    background-color: #0A3641;
-    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.10);
+header {
+  position: relative;
+  width: 100%;
+  background-color: #0a3641;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
-.logo{
-    max-width: 320px;
-    min-width: 300px;
-    padding: 30px;
+.logo {
+  max-width: 320px;
+  min-width: 300px;
+  padding: 30px;
 }
 
-.current{
-    font-weight: 700;
+.current {
+  font-weight: 700;
 }
 
-.cart{
-    max-width: 70px;
+.cart {
+  max-width: 70px;
 }
 
 .hamburger {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 100;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 100;
 }
 
-nav{
-    position: absolute;
-    display: none;
-    width: 100%;
-    top: 100%;
-    left: 0;
-    background-color: none;
-    padding: 20px 0;
-    z-index: 1;
+nav {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: none;
+  padding: 20px 0;
+  z-index: 1;
 }
 
-nav ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-nav li{
-    padding: 30px 50px;
+nav li {
+  padding: 30px 50px;
 }
 
-nav a{
-    text-decoration: none;
-    font-size: 2em;
-    color: #D36245;
-    font-family: "Instrument Sans";
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
+nav a {
+  text-decoration: none;
+  font-size: 2em;
+  color: #d36245;
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
-nav a:hover{
-    font-weight: 700;
+nav a:hover {
+  font-weight: 700;
+}
+
+.fa-brands,
+.fa-solid {
+  color: #d36245;
 }
 
 /*HEADER DESIGN END*/
 
-body{
-    background-image: url(../images/leaves.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+body {
+  background-image: url(../images/leaves.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
-main{
-    display:block;
-    position: relative;
-    background-color: white;
-    max-width: 800px;
-    padding: 2em;
-    padding-bottom: 180px;
+main {
+  display: block;
+  position: relative;
+  background-color: white;
+  max-width: 800px;
+  padding: 2em;
+  padding-bottom: 180px;
 }
 
-h1{
-    font-family: "Instrument Sans";
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: uppercase;
-    font-size: 96px;
-    color: #5A6338;
-    margin-top: 50px;
-    margin-bottom: 50px;
+h1 {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  font-size: 96px;
+  color: #5a6338;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-p{
-    font-family: "Instrument Sans";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 3;
-    font-size: 28px;
-    color: #0A3641;
+p {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3;
+  font-size: 28px;
+  color: #0a3641;
 }
 
-.title p{
-    text-transform: uppercase;
-    font-weight: 600;
+.title p {
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.frame{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+.frame {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.title{
-    grid-column-start: 1;
+.title {
+  grid-column-start: 1;
 }
 
-.content{
-    grid-column-start: 2;
+.content {
+  grid-column-start: 2;
 }
 
 /*FOOTER DESIGN START*/
 
-footer{
-    position: relative;
-    width: 100%;
-    justify-content: center;
-    background-color: white;
-    display: flex;
+footer {
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  background-color: white;
+  display: flex;
 }
 
-footer ul{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 footer ul li i {
-    margin: 40px;
-    font-size: 55px;
+  margin: 40px;
+  font-size: 55px;
 }
 
 /*FOOTER DESIGN END*/
 
 @media (min-width: 600px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    nav{
-        display: block;
-        position: static;
-        width: auto;
-        padding: 0;
-    }
-    nav ul {
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-    nav li {
-        padding: 0 30px;
-        width: auto;
-    }    
-    nav a{
-        display: inline-block;
-    }
-    .hamburger{
-        display: none;
-    }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: block;
+    position: static;
+    width: auto;
+    padding: 0;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  nav li {
+    padding: 0 30px;
+    width: auto;
+  }
+  nav a {
+    display: inline-block;
+  }
+  .hamburger {
+    display: none;
+  }
 }
 
-@media (max-width: 599px){
-    nav{
-        background-color: #0A3641;
-     }
- 
-    nav a{
-        font-size: 26px;
-    }
+@media (max-width: 599px) {
+  nav {
+    background-color: #0a3641;
+  }
 
-    h1{
-        font-size: 60px;
-    }
+  nav a {
+    font-size: 26px;
+  }
 
-    .frame, .content, .title{
-        display: block;
-    }
+  h1 {
+    font-size: 60px;
+  }
+
+  .frame,
+  .content,
+  .title {
+    display: block;
+  }
 }
