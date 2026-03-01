@@ -157,7 +157,7 @@ function displayProduct(product) {
     );
 
     if (existingItem) {
-      existingItem.quantity += parseInt(quantity);
+      existingItem.quantity = Number(existingItem.quantity) + Number(quantity);
     } else {
       cart.push(item);
     }
