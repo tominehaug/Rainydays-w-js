@@ -94,6 +94,7 @@ function displayProduct(product) {
             <select id="sizeSelect">
                 <option value="" selected></option>
             </select>
+            <div class="error"></div>
         </fieldset>
         <fieldset>
             <label>Quantity</label>
@@ -106,6 +107,7 @@ function displayProduct(product) {
                 <option value="5">5</option>
                 <option value="6">6</option>
             </select>
+            <div class="error"></div>
         </fieldset>`;
 
   const sizeSelect = document.getElementById("sizeSelect");
@@ -143,7 +145,8 @@ function displayProduct(product) {
     };
 
     if (size === "" || quantity === "0") {
-      alert("Please select size and quantity.");
+      const errorWrapper = document.querySelector(".error");
+      errorWrapper.innerHTML = "Please select size and quantity.";
       return;
     }
 
