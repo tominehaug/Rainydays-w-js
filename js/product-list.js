@@ -17,7 +17,7 @@ function displayJackets(jackets) {
   container.innerHTML = "";
   jackets.forEach((jacket) => {
     const link = document.createElement("a");
-    link.href = `product/index.html?id=${jacket.id}`;
+    link.href = `store/product/index.html?id=${jacket.id}`;
     link.classList.add("jacket-link");
 
     const nameDiv = document.createElement("div");
@@ -29,7 +29,7 @@ function displayJackets(jackets) {
     priceDiv.textContent = jacket.price + "kr";
     priceDiv.classList.add("price");
     container.appendChild(priceDiv);
-    
+
     const image = document.createElement("img");
     image.src = jacket.image.url;
     image.alt = jacket.image.alt;
@@ -47,20 +47,24 @@ function filterJackets() {
   const menChecked = document.getElementById("menCheckbox").checked;
 
   if (!womenChecked && !menChecked) {
-  filtered = allJackets;
-  }else{
-  filtered = allJackets.filter((jacket) => {
-    if (jacket.gender === "Female" && womenChecked) return true;
-    if (jacket.gender === "Male" && menChecked) return true;
-    return false;
-  });
+    filtered = allJackets;
+  } else {
+    filtered = allJackets.filter((jacket) => {
+      if (jacket.gender === "Female" && womenChecked) return true;
+      if (jacket.gender === "Male" && menChecked) return true;
+      return false;
+    });
   }
 
   displayJackets(filtered);
 }
 
-document.getElementById("womenCheckbox").addEventListener("change", filterJackets);
-document.getElementById("menCheckbox").addEventListener("change", filterJackets);
+document
+  .getElementById("womenCheckbox")
+  .addEventListener("change", filterJackets);
+document
+  .getElementById("menCheckbox")
+  .addEventListener("change", filterJackets);
 
 async function init() {
   allJackets = await fetchJackets();
