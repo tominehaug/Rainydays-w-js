@@ -10,25 +10,25 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../../assets/favicon-32x32.png"
+      href="assets/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="512x512"
-      href="../../assets/android-chrome-512x512.png"
+      href="assets/android-chrome-512x512.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="512x512"
-      href="../../assets/android-chrome-192x192.png"
+      href="assets/android-chrome-192x192.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../../assets/favicon-16x16.png"
+      href="assets/favicon-16x16.png"
     />
     <!--icon for hamburger menu-->
     <script
@@ -36,7 +36,7 @@
       crossorigin="anonymous"
     ></script>
     <!--stylesheet-->
-    <link href="../../css/checkout-details.css" rel="stylesheet" />
+    <link href="css/checkout-details.css" rel="stylesheet" />
     <!--font sources-->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat+Subrayada:wght@400;700&family=Open+Sans:wght@300;400&display=swap");
@@ -45,11 +45,8 @@
 
   <body>
     <header>
-      <a href="../../index.html"
-        ><img
-          alt="Rainydays logo"
-          src="../../images/rainydays-logo.png"
-          class="logo"
+      <a href="index.html"
+        ><img alt="Rainydays logo" src="images/rainydays-logo.png" class="logo"
       /></a>
       <input type="checkbox" id="hamburger-menu" />
       <label for="hamburger-menu" class="hamburger"
@@ -57,16 +54,11 @@
       ></label>
       <nav>
         <ul>
-          <li><a href="../../about.html">About</a></li>
-          <li><a href="../../contact.html">Contact</a></li>
-          <li><a href="../../sign-in.html">Sign in</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="sign-in.html">Sign in</a></li>
           <li>
-            <a href="index.html" class="cart-icon"
-              ><img
-                src="../../assets/shopping-cart-icon-4.png"
-                alt="go to shopping cart"
-                class="cart"
-            /></a>
+            <a href="store/checkout/" class="cart-icon"></a>
           </li>
         </ul>
       </nav>
@@ -184,10 +176,10 @@
         <aside id="summary"></aside>
         <div class="buttons">
           <button>
-            <a href="../checkout/index.html" class="back">Back</a>
+            <a href="store/checkout/index.html" class="back">Back</a>
           </button>
           <button type="submit" id="place-order">
-            <a href="confirmation/index.html">Place order</a>
+            <a href="store/checkout/confirmation/index.html">Place order</a>
           </button>
         </div>
       </div>
@@ -199,7 +191,7 @@
         <li><i class="fa-brands fa-youtube"></i></li>
       </ul>
     </footer>
-    <script defer src="../../js/payment-details.js"></script>
-    <script defer src="../../js/cart-icon-functionality.js"></script>
+    <script defer src="js/payment-details.js"></script>
+    <script defer src="js/cart-icon-functionality.js"></script>
   </body>
 </html>
