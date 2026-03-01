@@ -46,6 +46,8 @@ function filterJackets() {
   const womenChecked = document.getElementById("womenCheckbox").checked;
   const menChecked = document.getElementById("menCheckbox").checked;
 
+  let filtered = [];
+
   if (!womenChecked && !menChecked) {
     filtered = allJackets;
   } else {

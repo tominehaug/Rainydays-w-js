@@ -140,7 +140,7 @@ function displayProduct(product) {
     );
 
     if (existingItem) {
-      existingItem.quantity = quantity;
+      existingItem.quantity += quantity;
     } else {
       cart.push(item);
     }
@@ -154,7 +154,7 @@ function displayProduct(product) {
       confirm.textContent = "Added to cart!";
       cartbutton.before(confirm);
     } else {
-      window.location.href = `store/checkout/index.html`;
+      window.location.href = `store/checkout/`;
     }
   });
 }
