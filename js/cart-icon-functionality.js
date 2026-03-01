@@ -5,8 +5,6 @@ const url = window.location.href;
 let cartIcon = document.querySelector(".cart-icon");
 cartIcon.innerHTML = "";
 
-console.log("cleared");
-
 const iconImg = document.createElement("img");
 iconImg.classList.add("cart");
 cartIcon.appendChild(iconImg);

@@ -3,7 +3,9 @@ const jacketId = params.get("id");
 
 async function fetchProduct() {
   try {
-    const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${jacketId}`);
+    const response = await fetch(
+      `https://v2.api.noroff.dev/rainy-days/${jacketId}`,
+    );
     if (!response.ok) throw new Error("There was a failed network response");
     const data = await response.json();
     return data.data;
@@ -14,67 +16,66 @@ async function fetchProduct() {
 }
 
 function displayProduct(product) {
-    const content = document.querySelector('main');
-    content.innerHTML = "";
+  const content = document.querySelector("main");
+  content.innerHTML = "";
 
-    const productimage = document.createElement("img")
-    productimage.src = product.image.url;
-    productimage.alt = product.image.alt;
-    productimage.classList.add("productimage");
-    content.appendChild(productimage);
+  const productimage = document.createElement("img");
+  productimage.src = product.image.url;
+  productimage.alt = product.image.alt;
+  productimage.classList.add("productimage");
+  content.appendChild(productimage);
 
-    const container = document.createElement("div");
-    container.id = "overview";
-    content.appendChild(container);
+  const container = document.createElement("div");
+  container.id = "overview";
+  content.appendChild(container);
 
-    const name = document.createElement("h1");
-    name.textContent = `${product.title}`;
-    container.appendChild(name);
+  const name = document.createElement("h1");
+  name.textContent = `${product.title}`;
+  container.appendChild(name);
 
-    const gender = document.createElement("h2");
-    gender.textContent = `${product.gender}`;
-    gender.classList.add("category");
-    container.appendChild(gender);
+  const gender = document.createElement("h2");
+  gender.textContent = `${product.gender}`;
+  gender.classList.add("category");
+  container.appendChild(gender);
 
-    const price = document.createElement("h2");
-    price.textContent = `${product.price}`+ "kr";
-    price.classList.add("price");
-    container.appendChild(price);
+  const price = document.createElement("h2");
+  price.textContent = `${product.price}` + "kr";
+  price.classList.add("price");
+  container.appendChild(price);
 
-    const description = document.createElement("p");
-    description.textContent = `${product.description}`;
-    description.classList.add("description");
-    container.appendChild(description);
+  const description = document.createElement("p");
+  description.textContent = `${product.description}`;
+  description.classList.add("description");
+  container.appendChild(description);
 
-    const asideDiv = document.createElement("div");
-    asideDiv.classList.add("characteristics");
+  const asideDiv = document.createElement("div");
+  asideDiv.classList.add("characteristics");
 
-    const aside = document.createElement("aside");
-    asideDiv.appendChild(aside);
+  const aside = document.createElement("aside");
+  asideDiv.appendChild(aside);
 
-    const listTitle = document.createElement("h2");
-    listTitle.textContent = "Characteristics:";
+  const listTitle = document.createElement("h2");
+  listTitle.textContent = "Characteristics:";
 
-    const ul = document.createElement("ul");
-    const li1 = document.createElement("li");
-    li1.textContent = `${product.baseColor}`;
-    const li2 = document.createElement("li");
-    li2.textContent = `${product.gender}`;
+  const ul = document.createElement("ul");
+  const li1 = document.createElement("li");
+  li1.textContent = `${product.baseColor}`;
+  const li2 = document.createElement("li");
+  li2.textContent = `${product.gender}`;
 
-    container.appendChild(asideDiv);
-    aside.appendChild(listTitle);
-    aside.appendChild(ul);
-    ul.appendChild(li1);
-    ul.appendChild(li2);
+  container.appendChild(asideDiv);
+  aside.appendChild(listTitle);
+  aside.appendChild(ul);
+  ul.appendChild(li1);
+  ul.appendChild(li2);
 
-    const inputSection = document.createElement("div");
-    inputSection.classList.add("input-section");
-    content.appendChild(inputSection);
-    const form = document.createElement("form");
-    inputSection.appendChild(form);
+  const inputSection = document.createElement("div");
+  inputSection.classList.add("input-section");
+  content.appendChild(inputSection);
+  const form = document.createElement("form");
+  inputSection.appendChild(form);
 
-    form.innerHTML = 
-        `<fieldset>
+  form.innerHTML = `<fieldset>
             <label>Size</label>
             <select id="sizeSelect">
                 <option value="" selected></option>
@@ -93,69 +94,69 @@ function displayProduct(product) {
             </select>
         </fieldset>`;
 
-    const sizeSelect = document.getElementById("sizeSelect")
-    const quantitySelect = document.getElementById("quantitySelect");
+  const sizeSelect = document.getElementById("sizeSelect");
+  const quantitySelect = document.getElementById("quantitySelect");
 
-    const sizes = product.sizes;
+  const sizes = product.sizes;
 
-    sizes.forEach((size) => {
-        const option = document.createElement("option");
-        option.value = size;
-        option.textContent = size;
-        sizeSelect.appendChild(option);
-    });
+  sizes.forEach((size) => {
+    const option = document.createElement("option");
+    option.value = size;
+    option.textContent = size;
+    sizeSelect.appendChild(option);
+  });
 
-    const cartbutton = document.createElement("button");
-    cartbutton.type = "button";
-    cartbutton.textContent = "Add to cart";
-    cartbutton.classList.add("cartbutton");
-    inputSection.appendChild(cartbutton);
+  const cartbutton = document.createElement("button");
+  cartbutton.type = "button";
+  cartbutton.textContent = "Add to cart";
+  cartbutton.classList.add("cartbutton");
+  inputSection.appendChild(cartbutton);
 
-    let addedToCart = false;
+  let addedToCart = false;
 
-    cartbutton.addEventListener('click', function (event) {
-        const size = sizeSelect.value;
-        const quantity = quantitySelect.value;
+  cartbutton.addEventListener("click", function (event) {
+    const size = sizeSelect.value;
+    const quantity = quantitySelect.value;
 
-        const item = {
-        id: jacketId,
-        imageUrl: product.image.url,
-        imageAlt: product.image.alt,
-        name: product.title,
-        price: `${product.price}`,
-        size: size,
-        quantity: parseInt(quantity),
-        };
+    const item = {
+      id: jacketId,
+      imageUrl: product.image.url,
+      imageAlt: product.image.alt,
+      name: product.title,
+      price: `${product.price}`,
+      size: size,
+      quantity: parseInt(quantity),
+    };
 
-        if (size ==="" || quantity === "0"){
-            alert("Please select size and quantity.");
-            return;
-        }
+    if (size === "" || quantity === "0") {
+      alert("Please select size and quantity.");
+      return;
+    }
 
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        
-        const existingItem = cart.find(
-            (cartItem) => cartItem.id === item.id && cartItem.size === item.size
-        );
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        if (existingItem){
-            existingItem.quantity = quantity;
-        }else{
-            cart.push(item);
-        }
+    const existingItem = cart.find(
+      (cartItem) => cartItem.id === item.id && cartItem.size === item.size,
+    );
 
-        localStorage.setItem("cart", JSON.stringify(cart));
+    if (existingItem) {
+      existingItem.quantity = quantity;
+    } else {
+      cart.push(item);
+    }
 
-        if (!addedToCart) {
-            cartbutton.textContent = "Go to cart";
-            addedToCart = true;
-            const confirm = document.createElement("p");
-            confirm.textContent = "Added to cart!";
-            cartbutton.before(confirm);
-        }else{
-            window.location.href = `../checkout/index.html`;
-        }
-    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    if (!addedToCart) {
+      cartbutton.textContent = "Go to cart";
+      addedToCart = true;
+      const confirm = document.createElement("p");
+      confirm.textContent = "Added to cart!";
+      cartbutton.before(confirm);
+    } else {
+      window.location.href = `store/checkout/index.html`;
+    }
+  });
 }
 
 async function init() {
