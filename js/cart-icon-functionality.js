@@ -9,17 +9,12 @@ const iconImg = document.createElement("img");
 iconImg.classList.add("cart");
 cartIcon.appendChild(iconImg);
 
-const icon = "assets/shopping-cart-icon.png";
-const icon4 = "assets/shopping-cart-icon-4.png";
-const icon5 = "assets/shopping-cart-icon5.png";
-const icon6 = "assets/shopping-cart-icon6.png";
-
 if (cartContent.length === 0 && !url.includes("checkout")) {
-  iconImg.src = icon;
+  iconImg.src = "assets/shopping-cart-icon.png";
 } else if (cartContent.length > 0 && !url.includes("checkout")) {
-  iconImg.src = icon5;
+  iconImg.src = "assets/shopping-cart-icon-4.png";
 } else if (cartContent.length === 0 && url.includes("checkout")) {
-  iconImg.src = icon4;
+  iconImg.src = "assets/shopping-cart-icon5.png";
 } else if (cartContent.length > 0 && url.includes("checkout")) {
-  iconImg.src = icon6;
+  iconImg.src = "assets/shopping-cart-icon6.png";
 }
