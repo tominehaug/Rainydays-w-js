@@ -10,7 +10,7 @@ async function fetchProduct() {
     const data = await response.json();
     return data.data;
   } catch (error) {
-    const container = document.querySelector("#product-container");
+    const container = document.querySelector("main");
     container.innerHTML = "";
 
     const errorWrapper = document.createElement("div");
@@ -157,7 +157,7 @@ function displayProduct(product) {
     );
 
     if (existingItem) {
-      existingItem.quantity += quantity;
+      existingItem.quantity += parseInt(quantity);
     } else {
       cart.push(item);
     }
