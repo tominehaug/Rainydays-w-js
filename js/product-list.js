@@ -7,8 +7,23 @@ async function fetchJackets() {
     const data = await response.json();
     return data.data;
   } catch (error) {
-    console.error("Something went wrong" + error);
-    alert("There was an error fetching jackets!" + error);
+    const container = document.querySelector("#productlist");
+    container.innerHTML = "";
+
+    const errorWrapper = document.createElement("div");
+    errorWrapper.classList.add("error-message");
+
+    const message = document.createElement("p");
+    message.textContent =
+      "Sorry, we couldn't load our jacket collection right now.";
+
+    const retryBtn = document.createElement("button");
+    retryBtn.textContent = "Try Again";
+    retryBtn.addEventListener("click", () => location.reload());
+
+    errorWrapper.appendChild(message);
+    errorWrapper.appendChild(retryBtn);
+    container.appendChild(errorWrapper);
   }
 }
 
