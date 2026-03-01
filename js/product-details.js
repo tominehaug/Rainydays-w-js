@@ -14,7 +14,7 @@ async function fetchProduct() {
     container.innerHTML = "";
 
     const errorWrapper = document.createElement("div");
-    errorWrapper.classList.add("error-message");
+    errorWrapper.classList.add("error");
 
     const message = document.createElement("p");
     message.textContent = "Sorry, we couldn't load this product right now.";

@@ -11,7 +11,7 @@ async function fetchJackets() {
     container.innerHTML = "";
 
     const errorWrapper = document.createElement("div");
-    errorWrapper.classList.add("error-message");
+    errorWrapper.classList.add("error");
 
     const message = document.createElement("p");
     message.textContent =
