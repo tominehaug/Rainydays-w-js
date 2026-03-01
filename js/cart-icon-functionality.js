@@ -12,9 +12,9 @@ cartIcon.appendChild(iconImg);
 if (cartContent.length === 0 && !url.includes("checkout")) {
   iconImg.src = "assets/shopping-cart-icon.png";
 } else if (cartContent.length > 0 && !url.includes("checkout")) {
-  iconImg.src = "assets/shopping-cart-icon4.png";
-} else if (cartContent.length === 0 && url.includes("checkout")) {
   iconImg.src = "assets/shopping-cart-icon5.png";
+} else if (cartContent.length === 0 && url.includes("checkout")) {
+  iconImg.src = "assets/shopping-cart-icon4.png";
 } else if (cartContent.length > 0 && url.includes("checkout")) {
   iconImg.src = "assets/shopping-cart-icon6.png";
 }
