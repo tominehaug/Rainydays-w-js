@@ -230,6 +230,13 @@ footer ul li i {
     font-size: 1.2em;
   }
 
+  #productlist {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+  }
+
   .productlist {
     display: block;
     text-align: center;
