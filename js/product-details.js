@@ -133,7 +133,6 @@ function displayProduct(product) {
   cartbutton.addEventListener("click", function () {
     const size = sizeSelect.value;
     const quantity = quantitySelect.value;
-    console.log("click");
     const item = {
       id: jacketId,
       imageUrl: product.image.url,
