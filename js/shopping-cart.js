@@ -94,6 +94,7 @@ emptyCart.addEventListener("click", function () {
   itemList.innerHTML = "<p>Your cart is empty.</p>";
   continueBtn.remove();
   emptyCart.remove();
+  window.location.reload();
 });
 
 if (cart.length === 0) {
