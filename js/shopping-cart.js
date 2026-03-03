@@ -89,7 +89,7 @@ const emptyCart = document.createElement("button");
 emptyCart.id = "empty-cart";
 emptyCart.textContent = "CLEAR CART";
 itemList.after(emptyCart);
-emptyCart.addEventListener("click", function (event) {
+emptyCart.addEventListener("click", function () {
   localStorage.removeItem("cart");
   itemList.innerHTML = "<p>Your cart is empty.</p>";
   continueBtn.remove();

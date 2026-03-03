@@ -130,7 +130,7 @@ function displayProduct(product) {
 
   let addedToCart = false;
 
-  cartbutton.addEventListener("click", function (event) {
+  cartbutton.addEventListener("click", function () {
     const size = sizeSelect.value;
     const quantity = quantitySelect.value;
 
@@ -157,7 +157,7 @@ function displayProduct(product) {
     );
 
     if (existingItem) {
-      existingItem.quantity = Number(existingItem.quantity) + Number(quantity);
+      existingItem.quantity += parseInt(quantity);
     } else {
       cart.push(item);
     }
