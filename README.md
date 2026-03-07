@@ -36,28 +36,21 @@ This is where you list how to get the project started. It typically just include
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+[git clone git@github.com:NoroffFEU/portfolio-1-example.git](https://github.com/tominehaug/Rainydays-w-js.git)
 ```
+Run this command in the Visual Studio Code Terminal.
 
 2. Install the dependencies:
 
-```
-npm install
-```
+No dependencies for this project.
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
-
-To run the app, run the following commands:
-
-```bash
-npm run start
-```
+To run the app use LiveServer extension in Visual Studio Code.
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+Not open for contributions.
 
 ## Contact
 
